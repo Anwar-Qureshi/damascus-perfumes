@@ -1,6 +1,6 @@
 # Damascus Perfumes 🌹
 
-![Project Banner](public/Logo.jpeg)
+![Project Banner](public/logo.jpeg)
 
 > *Digital Artisanship for Luxury Fragrances.*
 
