@@ -29,7 +29,7 @@ export const products: Product[] = [
         price: 1250,
         description: "A timeless blend of Agarwood and Taif Rose.",
         longDescription: "Harvested from the depths of the Assam forests and blended with the rarest Taif Roses...",
-        image: "/Bg.jpg", // Placeholder image
+        image: "/bg.jpg", // Placeholder image
         notes: ["Agarwood", "Taif Rose", "Saffron", "Amber"],
         inStock: true,
     },
