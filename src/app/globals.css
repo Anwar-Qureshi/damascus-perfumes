@@ -1,26 +1,144 @@
 @import "tailwindcss";
 
+@theme {
+  --color-damasus-black: #0A0A0A;
+  --color-damasus-gold: #D4AF37;
+  --color-damasus-crimson: #990000;
+
+  --font-cinzel: var(--font-cinzel);
+  --font-inter: var(--font-inter);
+
+  --color-background: var(--damasus-black);
+  --color-foreground: #F5F5F5;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  background-color: #0A0A0A;
+  color: #F5F5F5;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-cinzel);
+}
+
+/* ============================================ */
+/* Custom Gold Cursor                           */
+/* ============================================ */
+* {
+  cursor: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='3' fill='%23D4AF37' opacity='0.7'/%3E%3Ccircle cx='10' cy='10' r='7' fill='none' stroke='%23D4AF37' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E") 10 10, auto;
+}
+
+a,
+button,
+[role="button"] {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23D4AF37' opacity='0.9'/%3E%3Ccircle cx='12' cy='12' r='9' fill='none' stroke='%23D4AF37' stroke-width='0.7' opacity='0.5'/%3E%3C/svg%3E") 12 12, pointer;
+}
+
+/* ============================================ */
+/* Film Grain Noise Overlay (2%)                */
+/* ============================================ */
+.film-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.025;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ============================================ */
+/* Golden Dust Float Animation                  */
+/* ============================================ */
+@keyframes goldenDustFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-40vh) translateX(20px) scale(1.15);
+    opacity: 0.25;
+  }
+
+  90% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(-80vh) translateX(-15px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* ============================================ */
+/* Shimmer Animation                            */
+/* ============================================ */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+
+  50% {
+    transform: translateX(150%) skewX(-20deg);
+  }
+
+  100% {
+    transform: translateX(150%) skewX(-20deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite;
+}
+
+/* ============================================ */
+/* Scrollbar                                    */
+/* ============================================ */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.12);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.3);
+}
+
+/* ============================================ */
+/* Selection                                    */
+/* ============================================ */
+::selection {
+  background: rgba(212, 175, 55, 0.25);
+  color: #F5F5F5;
+}
+
+/* ============================================ */
+/* Smooth Scrolling                             */
+/* ============================================ */
+html {
+  scroll-behavior: smooth;
 }

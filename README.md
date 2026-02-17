@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Damascus Perfumes 🌹
 
-## Getting Started
+![Project Banner](public/Logo.jpeg)
 
-First, run the development server:
+> *Digital Artisanship for Luxury Fragrances.*
+
+**Damascus Perfumes** is a high-performance, immersive e-commerce platform built for niche perfume brands. It combines cinematic 3D visuals with a seamless "Concierge Checkout" experience via WhatsApp.
+
+---
+
+## ✨ Key Features
+
+-   **Cinematic Entrance**: A scroll-driven storytelling experience with 3D elements and parallax effects.
+-   **"The Vault" Cart**: A glassmorphism-styled slide-out cart that preserves the luxury feel.
+-   **Concierge Checkout**: Instead of a generic payment form, orders are formatted into a professional WhatsApp message for personalized service.
+-   **Sensory Design**:
+    -   *Visual*: Gold-on-black aesthetic, custom serif typography, and film grain textures.
+    -   *Motion*: Smooth page transitions and micro-interactions using Framer Motion.
+-   **Performance**:
+    -   Built on **Next.js 15** for lightning-fast static generation.
+    -   Optimized 2D/3D hybrids for mobile battery preservation.
+
+## 🛠️ Tech Stack
+
+-   **Core**: [Next.js 15](https://nextjs.org/) (App Router), React 19, TypeScript
+-   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+-   **Animation**: [Framer Motion](https://www.framer.com/motion/)
+-   **3D Graphics**: [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) + Drei
+-   **State Management**: [Zustand](https://github.com/pmndrs/zustand)
+
+## 🚀 Getting Started
+
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+├── public/              # Static assets (images, fonts)
+├── src/
+│   ├── app/             # Next.js App Router pages
+│   ├── components/
+│   │   ├── cart/        # Cart drawer logic & UI
+│   │   ├── landing/     # Hero, Story, and Landing page sections
+│   │   ├── product/     # Product details & listing components
+│   │   └── three/       # 3D scenes & models
+│   ├── data/            # Static product database (products.ts)
+│   └── lib/             # Global stores (Zustand)
+```
 
-## Learn More
+## 📝 Customization
 
-To learn more about Next.js, take a look at the following resources:
+### Adding Products
+You don't need a database. high-performance product data is stored in `src/data/products.ts`.
+Simply edit this file to add new perfumes, change prices, or update descriptions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Updating Images
+Upload your bottle photography to the `public/` folder and reference them in `products.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚢 Deployment
 
-## Deploy on Vercel
+This project is optimized for **Vercel**.
+Please refer to `DEPLOYMENT.md` for a step-by-step launch guide.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2024 Damascus Perfumes. All rights reserved.
